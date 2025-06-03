@@ -56,20 +56,20 @@ def cleanData(filePath):
     cleanedData = data
 
     # Generate new file path with "Cleaned" added to the original file name
-    file_dir, file_name = os.path.split(filePath) 
-    base_name, ext = os.path.splitext(file_name)  
-    new_file_name = f"{base_name}_Cleaned{ext}"
-    new_file_path = os.path.join(file_dir, new_file_name)
+    fileDir, fileName = os.path.split(filePath) 
+    base_name, ext = os.path.splitext(fileName)  
+    newFileName = f"{base_name}_Cleaned{ext}"
+    newFilePath = os.path.join(fileDir, newFileName)
     
     # Save cleaned data to the new file
     if filePath.endswith(".csv"):
-        data.to_csv(new_file_path, index=False)
+        data.to_csv(newFilePath, index=False)
     elif filePath.endswith(".xlsx"):
-        data.to_excel(new_file_path, index=False)
+        data.to_excel(newFilePath, index=False)
     elif filePath.endswith(".json"):
-        data.to_json(new_file_path, orient="records", lines=True)
+        data.to_json(newFilePath, orient="records", lines=True)
 
-    print(f"Cleaned data saved to {new_file_path}")
+    print(f"Cleaned data saved to {newFilePath}")
     
     return cleanedData  
 
