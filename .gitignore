@@ -13,3 +13,5 @@ __pycache__/
 # System files
 Thumbs.db          # Windows
 
+# Data
+data/Customer Call List.xlsx
